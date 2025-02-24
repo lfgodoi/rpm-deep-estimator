@@ -12,7 +12,7 @@ from flask import Flask
 
 # Setting the app
 app = Flask(__name__)
-app.config["VERSION"] = "1.0.0"
+app.config["VERSION"] = "1.0.1"
 
 # Running the app
 if __name__ == "__main__":
