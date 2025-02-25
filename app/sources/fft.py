@@ -9,7 +9,7 @@ Computing signal spectra by applying the Fast Fourier Transform (FFT)
 
 # Importing packages and modules
 import numpy as np
-from utils import load_config
+from sources.utils import load_config
 
 # FFT class
 class FFT:

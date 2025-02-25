@@ -9,10 +9,14 @@ Main script
 
 # Importing packages and modules
 from flask import Flask
+from routes.rpm_estimator import rpm_estimator_blueprint
 
 # Setting the app
 app = Flask(__name__)
 app.config["VERSION"] = "1.0.1"
+
+# Registering the blueprints
+app.register_blueprint(rpm_estimator_blueprint)
 
 # Running the app
 if __name__ == "__main__":
