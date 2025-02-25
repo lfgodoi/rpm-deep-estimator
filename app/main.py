@@ -13,7 +13,7 @@ from routes.rpm_estimator import rpm_estimator_blueprint
 
 # Setting the app
 app = Flask(__name__)
-app.config["VERSION"] = "1.0.1"
+app.config["VERSION"] = "1.1.0"
 
 # Registering the blueprints
 app.register_blueprint(rpm_estimator_blueprint)
