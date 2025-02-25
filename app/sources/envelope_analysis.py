@@ -9,8 +9,8 @@ Computing signal envelopes by applying the Hilbert Transform
 
 # Importing packages and modules
 import numpy as np
-from scipy import hilbert
-from app.sources.utils import load_config
+from scipy.signal import hilbert
+from sources.utils import load_config
 
 # Envelope analysis class
 class EnvelopeAnalysis:
