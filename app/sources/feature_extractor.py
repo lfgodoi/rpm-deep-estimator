@@ -8,6 +8,7 @@ Extracting features from original signal and envelope spectra to be processed by
 """
 
 # Importing packages and modules
+import numpy as np
 from sources.config import Config
 
 # Feature Extractor class
@@ -18,10 +19,12 @@ class FeatureExtractor:
 
         # Configuration parameters
         config = Config()
-        self.eps = config.eps
+        self.feature_frequency_resolution = config.feature_frequency_resolution
+        self.feature_max_frequency = config.feature_max_frequency
 
         # Instance parameters
         self.confidence_margin = config.eps
+        self.feature_frequencies = np.arange(0, self.feature_max_frequency, self.feature_frequency_resolution)
 
     # Updating the confidence margin according to the current feature extraction
     def update_confidence_margin(self, frequencies):
@@ -32,5 +35,8 @@ class FeatureExtractor:
     #  Computing the FFT
     def extract(self, amplitudes: list, frequencies: list):
         features = []
+        for feature_frequency in self.feature_frequencies:
+            index = np.argmin(np.abs(frequencies - feature_frequency))
+            features.append(float(amplitudes[index]))
         self.update_confidence_margin(frequencies)
         return features
