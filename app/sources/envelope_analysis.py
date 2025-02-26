@@ -3,14 +3,14 @@
 
 """
 
-Computing signal envelopes by applying the Hilbert Transform
+Computing signal envelope by applying the Hilbert Transform
 
 """
 
 # Importing packages and modules
 import numpy as np
 from scipy.signal import hilbert
-from sources.utils import load_config
+from sources.config import Config
 
 # Envelope analysis class
 class EnvelopeAnalysis:
@@ -19,11 +19,11 @@ class EnvelopeAnalysis:
     def __init__(self):
 
         # Configuration parameters
-        config = load_config()
-        self.precision = config["precision"]
-        self.eps = config["eps"]
+        config = Config()
+        self.precision = config.precision
+        self.eps = config.eps
 
     # Computing the envelopes
-    def compute(self, signals):
-        envelopes = np.round(np.abs(hilbert(signals)), self.precision)
-        return envelopes
+    def compute(self, signal: list):
+        envelope = np.round(np.abs(hilbert(signal)), self.precision)
+        return envelope

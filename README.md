@@ -18,13 +18,14 @@ Given a vibration signal collected from a machine at a specified sampling freque
 
 ### Inputs
 
-- `signals (List[List[float]])`: signals to have their RPM estimated.
-- `sampling_frequencies (List[float])`: sampling frequencies used to acquire each of the signals.
+- `signal (List[float])`: signal to have its RPM estimated.
+- `sampling_frequency (float)`: sampling frequency used to acquire the signal.
 
 ### Outputs
 
-- `estimated_rpms (List[float])`: the estimated RPM value.
-- `confidence_margins (List[float])`: the estimation confidence margin.
+- `estimation_success (bool)`: estimation task status.
+- `estimated_rpm (float)`: estimated RPM value.
+- `confidence_margin (float)`: estimation confidence margin.
 
 ### Conditions
 
