@@ -13,7 +13,7 @@ from routes.estimation import estimation_blueprint
 
 # Setting the app
 app = Flask(__name__)
-app.config["VERSION"] = "1.2.0"
+app.config["VERSION"] = "1.3.0"
 
 # Registering the blueprints
 app.register_blueprint(estimation_blueprint)
